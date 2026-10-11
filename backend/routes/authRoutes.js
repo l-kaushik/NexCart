@@ -6,7 +6,7 @@ import admin from '../middleware/adminMiddleware.js';
 
 router.post('/register', registerUser);
 router.post('/login', loginUser);
-router.post('/users', protect, admin, getUsers);
+router.get('/users', protect, admin, getUsers);
 
 
 export default router;

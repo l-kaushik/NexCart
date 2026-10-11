@@ -81,10 +81,10 @@ const loginUser = async (req, res) => {
 
 
 
-const getUsers = async(res, req) => {
+const getUsers = async(req, res) => {
     try{
         const users = await User.find({}).select('-password');
-        res.join(users);
+        res.json(users);
     } catch (error) {
         console.error("Get Users Error", error);
         res.status(500).json({message: 'Server error'});
