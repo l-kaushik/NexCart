@@ -1,9 +1,12 @@
 import { Router } from 'express';
 const router = Router();
-import { registerUser, loginUser, getUsers } from '../controllers/authController';
-import { protect } from '../middleware/authMiddleware';
-import { admin } from '../middleware/adminMiddleware';
+import { registerUser, loginUser, getUsers } from '../controllers/authController.js';
+import protect from '../middleware/authMiddleware.js';
+import admin from '../middleware/adminMiddleware.js';
 
 router.post('/register', registerUser);
 router.post('/login', loginUser);
 router.post('/users', protect, admin, getUsers);
+
+
+export default router;

@@ -1,18 +1,22 @@
 import express from "express";
 import cors from "cors";
 import { config } from "dotenv";
-import connectDB from "./config/db";
+import connectDB from './config/db.js';
+import authRoutes from './routes/authRoutes.js'
+
 config();
 connectDB();
 
 const app = express();
 app.use(cors());
+app.use(express.json());
+app.use(express.urlencoded({ extended: true }));
 
 app.get("/", (req, res) => {
     res.send("NexCart backend is working properly!");
 });
 
-app.use('api/auth', require('./routes/authRoutes'))
+app.use('/api/auth', authRoutes);
 
 const PORT = process.env.PORT || 5000;
 
