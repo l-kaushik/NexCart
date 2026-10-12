@@ -2,8 +2,10 @@
   "name": "backend",
   "version": "1.0.0",
   "description": "Backend for NexCart",
+  "type": "module",
   "main": "index.js",
   "scripts": {
+    "predev": "node scripts/ensure-atlas-ip.js",
     "start": "node index.js",
     "dev": "nodemon index.js"
   },
