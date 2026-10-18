@@ -39,4 +39,4 @@ const verifyPayment = async (req, res) => {
     }
 }
 
-export { createOrder };
+export { createOrder, verifyPayment };
