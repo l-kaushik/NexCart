@@ -42,7 +42,7 @@ function Footer() {
               </li>
               <li>
                 <Link
-                  to="/return"
+                  to="/return-policy"
                   className="transition-colors duration-200 hover:text-cyan-400"
                 >
                   Return Policy
@@ -54,6 +54,14 @@ function Footer() {
                   className="transition-colors duration-200 hover:text-cyan-400"
                 >
                   Disclaimer
+                </Link>
+              </li>
+              <li>
+                <Link
+                  to="/contact"
+                  className="transition-colors duration-200 hover:text-cyan-400"
+                >
+                  Contact Us
                 </Link>
               </li>
             </ul>
