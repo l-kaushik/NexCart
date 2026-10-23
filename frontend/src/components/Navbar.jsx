@@ -1,4 +1,4 @@
-import { useContext, useState } from "react"
+import { useContext, useEffect, useState } from "react"
 import { useSelector } from 'react-redux';
 import { Link, NavLink, useNavigate } from "react-router-dom"
 import { AuthContext } from "../context/AuthContext"
@@ -20,7 +20,7 @@ function Navbar() {
 
     const handleLogout = () => {
         logout();
-        navigate("/login");
+        navigate("/auth");
     }
 
   return (
@@ -33,7 +33,7 @@ function Navbar() {
           className="flex shrink-0 items-center gap-2"
         >
           <img
-            src="./LogoDark.png"
+            src="./favicon.png"
             alt="NexCart Logo"
             className="h-10 w-auto object-contain sm:h-11"
           />
@@ -78,7 +78,7 @@ function Navbar() {
             </>
           ) : (
             <Link
-              to="/login"
+              to="/auth"
               className="rounded-xl bg-blue-600 px-5 py-2.5 text-sm font-semibold text-white shadow-md transition-all hover:-translate-y-0.5 hover:bg-blue-500 hover:shadow-blue-500/20"
             >
               Login
@@ -189,7 +189,7 @@ function Navbar() {
               </>
             ) : (
               <Link
-                to="/login"
+                to="/auth"
                 onClick={closeMenu}
                 className="mt-2 rounded-xl bg-blue-600 px-4 py-3 text-center font-semibold transition-colors hover:bg-blue-500"
               >
